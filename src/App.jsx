@@ -24,12 +24,15 @@ function App() {
         <ConditionalRender/>
         <ShowUserName name = "mateus"/>
 
-        {/* destructuring */}
-        <CarDetails brand="Ford" color="Azul" km={10000} />
-
-        {/* reaproveitamento */}
-        <CarDetails brand="VW" color="Vermelho" km={535} />
-        <CarDetails brand="Fiat" color="Branco" km={0} />
+        {/* renderizando um array de forma dinamica */}
+        {cars.map((car) => (
+          <CarDetails
+            key={car.id}
+            brand={car.brand}
+            color={car.color}
+            km={car.km}
+          />
+        ))}
       </div>
       
       
